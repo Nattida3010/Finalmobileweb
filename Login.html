@@ -35,35 +35,35 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="home.html">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdownId">
-            <a class="dropdown-item" href="Login.html">คนที่เข้ามาในมอ</a>
-            <a class="dropdown-item" href="Timeout.html">คนที่ออกจากมอ</a>
-          </div>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="home.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="Login.html">คนที่เข้ามาในมอ</a>
+                <a class="dropdown-item" href="Timeout.html">คนที่ออกจากมอ</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
 <div class="container">
-  <h1>ข้อมูลทุกคนที่ลงทะเบียน</h1>
+  <h1>ข้อมูลทุกคนที่เข้าในมอ</h1>
 
       <table class="table">
         <thead>
@@ -82,7 +82,7 @@
             
           </tr>
         </thead>
-        <tbody id="person">
+        <tbody id="TimeIn">
         </tbody>
       </table>
  
@@ -92,7 +92,7 @@
 
       <script>
   var detail ="";
-    db.collection("person").get().then((querySnapshot) => {
+    db.collection("TimeIn").get().then((querySnapshot) => {
     
       querySnapshot.docs.forEach(function (item) {
        
@@ -109,7 +109,7 @@
           +"<td>" + item.data().major+ "</td>" 
           +"<td>" + item.data().psucode + "</td>" 
           +"<td>" + item.data().phone + "</td>" 
-    document.getElementById("person").innerHTML = detail;
+    document.getElementById("TimeIn").innerHTML = detail;
     });
     
 });
